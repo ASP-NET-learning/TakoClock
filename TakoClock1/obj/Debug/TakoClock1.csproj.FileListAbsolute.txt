@@ -1,0 +1,10 @@
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\bin\Debug\TakoClock1.exe.config
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\bin\Debug\TakoClock1.exe
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\bin\Debug\TakoClock1.pdb
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.csproj.AssemblyReference.cache
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.Form1.resources
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.Properties.Resources.resources
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.csproj.GenerateResource.cache
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.csproj.CoreCompileInputs.cache
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.exe
+A:\MISIT\ADONET\AdoProject\TakoClock\TakoClock1\obj\Debug\TakoClock1.pdb
