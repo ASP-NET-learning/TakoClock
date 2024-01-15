@@ -13,10 +13,14 @@ namespace TakoClock1
 {
     public partial class Form1 : Form
     {
+        private SoundPlayer simpleSound;
+
         public Form1()
         {
             InitializeComponent();
-           
+            string path = Environment.CurrentDirectory;
+            string musicPath = path.Replace(@"\bin\Debug", @"\Audio\ina語音包.wav");
+            simpleSound = new SoundPlayer(musicPath);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,17 +51,17 @@ namespace TakoClock1
                 DateTime currentTime = DateTime.Now;
                 string curTime = currentTime.ToString("HH:mm");
                 string userTime = userInput.ToString("HH:mm");
+                string curTime2 = currentTime.ToString("ss");
 
                 // 比對時間
-                if (curTime == userTime)
+                if (curTime == userTime && curTime2 == "00")
                 {
-                    string path = Environment.CurrentDirectory;
-                    string musicPath = path.Replace(@"\bin\Debug", @"\Audio\ina語音包.wav");
+                    
                     try
                     {
-                        this.timer1.Stop();
-                        SoundPlayer simpleSound = new SoundPlayer(musicPath);
-                        simpleSound.Play();
+                        label1.Text = "時間到!";
+                        timer1.Stop();
+                        simpleSound.PlayLooping(); 
                     }
                     catch
                     {
@@ -71,7 +75,7 @@ namespace TakoClock1
             {
                 // 使用者輸入的不是有效的日期時間字串，你可以在這裡處理錯誤
                 //MessageBox.Show("請輸入有效的日期時間格式。");
-                label1.Text = "請輸入有效的日期時間格式。";
+                label1.Text = "時間還沒到!";
                 return;
             }
 
@@ -84,14 +88,26 @@ namespace TakoClock1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            inputLabel.Text = textBox1.Text;
-            timer1.Start();
-
+            inputLabel.Text = textBox1.Text; 
         }
 
         private void inputLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UpdateCurrentTime();
+            timer1.Start();
+            textBox1.Text = "00:00";
+            inputLabel.Text = "";
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            simpleSound.Stop();
         }
     }
 }
